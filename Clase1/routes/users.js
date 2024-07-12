@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  console.log(req.query);
-  var nombre=req.query.nombre
+router.post('/', function(req, res, next) {
+  console.log(req.body);
+  var nombre=req.body.nombre
   res.send('Hola'+nombre+ 'como estas');
 });
 
@@ -41,5 +41,7 @@ router.post('/contar', function(req, res, next) {
 
   res.send(`El texto "${texto}" contiene ${numVocales} vocales y ${numConsonantes} consonantes.`);
 });
+
+
 
 module.exports = router;
